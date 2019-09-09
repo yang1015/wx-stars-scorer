@@ -1,0 +1,51 @@
+<view class="page-container">
+  <view class="sliding-up-feedback-section flex-col-around-center bg-white {{slidingOut? 'sliding-out-popup-wrapper':''}}">
+          <view class="text-center">
+              <view>对本次服务进行评价</view>
+              <view class='wx-star-panel'>
+                  <view class='wx-star' wx:for="{{stars}}" wx:for-item="starItem" wx:for-index="idx" wx:key="{{idx}}">
+                      <image src="{{starItem==1? '/assets/starChecked.png': '/assets/starUnchecked.png'}}"
+                            style="width:49rpx;height:47rpx"
+                            bindtap='handleStarsChange' data-idx='{{idx}}'/>
+                  </view>
+              </view>
+          </view>
+
+          <view wx:if="{{slidingOut}}">
+              <view class="problemsList">
+                  <view wx:for="{{problemsList}}" wx:for-item="problem" wx:for-index="idx" wx:key="{{idx}}">
+                      <view wx:if="{{calc.findIt(clickedIndexArr, idx)}}" bindtap="handleProblemClick"
+                            data-clickedIndex="{{idx}}"
+                            class="each-problem text-smallest bg-darkOrange" style="border: 1px solid #FDA040">
+                          {{problem}}
+                      </view>
+                      <view wx:else bindtap="handleProblemClick" data-clickedIndex="{{idx}}"
+                            class="each-problem text-smallest unchosen-problem"> {{problem}}
+                      </view>
+                  </view>
+                  
+              </view>
+
+              <textarea fixed="{{true}}" adjust-position="{{true}}" class='text-middle'
+                        placeholder-class="placeholder-class"
+                        maxlength='100'
+                        placeholder='我想提升自己，快给我点建议吧~'
+                        bindinput='handleTextareaChange'>
+                        <!--<text class="color-gray text-smallest maxlength">300字以内</text>-->
+              </textarea>
+
+              <button disabled="{{clickedSubmitButton}}" class="bg-black color-darkOrange button-radius"
+                      style="box-shadow: 0px 10rpx 18rpx 3rpx rgba(6,0,1,0.21);" bindtap="submitFeedback">提交
+              </button>
+          </view>
+      </view>
+
+  <wxs module="calc">
+    function findIt(arr, index){
+      return arr[index]
+      }
+    module.exports = {
+      findIt:findIt
+    }
+  </wxs>
+</view>

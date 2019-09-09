@@ -1,0 +1,13 @@
+App({
+  onLaunch() {
+
+  },
+  
+  onShow() {
+
+  },
+
+  globalData: {
+
+  }
+})

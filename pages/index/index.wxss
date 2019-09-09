@@ -1,0 +1,110 @@
+ 
+
+.page-container {
+  background: #F3F4F6;
+  height: 100vh;
+  overflow-y: auto;
+  padding-bottom: env(safe-area-inset-bottom);
+  -webkit-overflow-scrolling: touch;
+}
+
+.sliding-up-feedback-section {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: env(safe-area-inset-bottom);
+  box-shadow: 0px 5rpx 21rpx 0rpx rgba(6, 0, 1, 0.08);
+  z-index: 2;
+  padding: 50rpx 58rpx;
+}
+
+/* wx-star */
+.wx-star-panel{
+  margin-top: 20rpx;
+  display: flex;
+  margin-bottom: 50rpx;
+}
+
+.wx-star {
+  margin: 0 30rpx;
+}
+
+.problemsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.each-problem {
+  width: 199rpx;
+  height: 55rpx;
+  text-align: center;
+  line-height: 55rpx;
+  margin-bottom: 16rpx;
+  border-radius: 6rpx;
+}
+
+.unchosen-problem {
+  border: 1px solid #A7A7A7;
+}
+
+textarea {
+  width: 635rpx;
+  height: 209rpx;
+  background: #F3F4F6;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  position: relative;
+}
+
+.placeholder-class {
+font-size: 24rpx;
+padding: 20rpx;
+position: absolute;
+left: 20rpx;
+top: 20rpx;
+}
+
+.sliding-out-popup-wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2; /*这里如果不设置的话 redBag是可以被点击的*/
+}
+
+.button-radius {
+  border-radius: 47rpx;
+}
+
+.bg-darkOrange{
+  background: #FDA040;
+}
+
+.bg-black {
+  background: #333;
+}
+
+.flex-col-around-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bg-white {
+  background: #fff;
+}
+
+/* view里文字居中 */
+.text-center {
+  text-align: center;
+}
+.text-smallest {  font-size: 24rpx;  }
+.text-middle{  font-size: 28rpx;  }
+.color-darkOrange {
+  color: #FDA040;
+}
